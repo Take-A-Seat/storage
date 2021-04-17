@@ -29,13 +29,3 @@ func DisconnectFromDatabase(client *mongo.Client) {
 	fmt.Println("Disconnected from MongoDB!")
 	return
 }
-
-func Connect(username string, password string, host string) (*mongo.Client, error) {
-	clientOptions := options.Client().ApplyURI("mongodb://" + username + ":" + password + "@" + host)
-	client, err := mongo.Connect(context.TODO(), clientOptions)
-	if err != nil {
-		return client, err
-	}
-
-	return client, nil
-}
