@@ -8,7 +8,7 @@ import (
 )
 
 func ConnectToDatabase(username string, password string, host string, database string) (*mongo.Client, error) {
-	clientOptions := options.Client().ApplyURI("mongodb://" + username + ":" + password + "@" + host + "/" + database + "?retryWrites=true&w=majority")
+	clientOptions := options.Client().ApplyURI("mongodb+srv://" + username + ":" + password + "@" + host + "/" + database + "?retryWrites=true&w=majority")
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
 		fmt.Println("Couldn't connect to MongoDB!")
