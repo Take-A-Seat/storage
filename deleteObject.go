@@ -8,7 +8,7 @@ import (
 )
 
 func DeleteByParam(DbUsername string, DbPassword string, DbHost string, filterId string, dbName string, collectionName string, deletedField string) error {
-	client, err := ConnectToDatabase(DbUsername, DbPassword, DbHost)
+	client, err := ConnectToDatabase(DbUsername, DbPassword, DbHost,dbName)
 	if err != nil {
 		return err
 	}
