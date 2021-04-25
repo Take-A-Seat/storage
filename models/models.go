@@ -21,7 +21,7 @@ type Restaurant struct {
 	Address     string             `bson:"address" json:"address"`
 	Phone       string             `bson:"phone" json:"phone"`
 	Program     []Program          `bson:"program" json:"program"`
-	PostCode    int                `bson:"postCode"  json:"post_code"`
+	PostCode    int                `bson:"postCode"  json:"postCode"`
 	DeleteAt    time.Time          `bson:"deleteAt" json:"delete_at"`
 }
 
