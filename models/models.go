@@ -1,7 +1,6 @@
 package models
 
 import (
-	"github.com/ProAdminServ/auth/auth"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"time"
 )
@@ -35,5 +34,5 @@ type Program struct {
 type ManagerDetails struct {
 	Id         primitive.ObjectID `bson:"_id" json:"id"`
 	Restaurant Restaurant         `bson:"restaurant" json:"restaurant"`
-	User       auth.User          `bson:"user" json:"user"`
+	User       User          `bson:"user" json:"user"`
 }
