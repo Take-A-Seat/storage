@@ -3,13 +3,19 @@ package storage
 import (
 	"encoding/json"
 	"errors"
-	"github.com/Take-A-Seat/storage/models"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-func doRequestToIsAuthenticated(c *gin.Context, apiUrl string) (models.User, error) {
-	var user models.User
+type UserDetails struct {
+	UserId    string `json:"UserId" bson:"_id"`
+	Email     string `json:"Email"`
+	FirstName string `json:"firstName"`
+	LastName  string `json:"lastName"`
+	Role      string `json:"role"`
+}
+func doRequestToIsAuthenticated(c *gin.Context, apiUrl string) (UserDetails, error) {
+	var user UserDetails
 
 	headers := Headers{}
 	if c.Request.Header["Authorization"] != nil {
@@ -43,5 +49,10 @@ func GetLoggedInUserId(c *gin.Context, apiUrl string) (primitive.ObjectID, error
 		return primitive.ObjectID{}, err
 	}
 
-	return user.Id, nil
+ 	objIdUser,err :=primitive.ObjectIDFromHex(user.UserId)
+	if err != nil {
+		return primitive.ObjectID{}, err
+	}
+
+	return objIdUser, nil
 }
