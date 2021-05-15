@@ -21,31 +21,31 @@ type File struct {
 }
 
 type SocialProfile struct {
-	Facebook  string `bson:"facebook" json:"facebook"`
-	Instagram string `bson:"instagram" json:"instagram"`
-	Twitter   string `bson:"twitter" json:"twitter"`
+	Facebook  string `bson:"facebook" json:"facebook" form:"facebook"`
+	Instagram string `bson:"instagram" json:"instagram" form:"instagram"`
+	Twitter   string `bson:"twitter" json:"twitter" form:"twitter"`
 }
 
 type Restaurant struct {
-	Id          primitive.ObjectID `bson:"_id" json:"id"`
-	Name        string             `bson:"name" json:"name"`
-	Description string             `bson:"description" json:"description"`
-	Address     string             `bson:"address" json:"address"`
-	Phone       string             `bson:"phone" json:"phone"`
-	Program     []Program          `bson:"program" json:"program"`
-	PostCode    int                `bson:"postCode"  json:"postCode"`
-	Logo        File               `bson:"logo" json:"logo"`
-	Country     string             `bson:"country" json:"country"`
-	Email       string             `bson:"email" json:"email"`
-	Website     string             `json:"website" bson:"website"`
+	Id          primitive.ObjectID `bson:"_id" json:"id" form:"id"`
+	Name        string             `bson:"name" json:"name" form:"name"`
+	Description string             `bson:"description" json:"description" form:"description"`
+	Address     string             `bson:"address" json:"address" form:"address"`
+	Phone       string             `bson:"phone" json:"phone" form:"phone"`
+	Program     []Program          `bson:"program" json:"program" form:"program"`
+	PostCode    int                `bson:"postCode"  json:"postCode" form:"postCode"`
+	Logo        File               `bson:"logo" json:"logo" form:"logo"`
+	Country     string             `bson:"country" json:"country" form:"country"`
+	Email       string             `bson:"email" json:"email" form:"email"`
+	Website     string             `json:"website" bson:"website" form:"website"`
 	SocialProfile
 	DeleteAt time.Time `bson:"deleteAt" json:"delete_at"`
 }
 
 type Program struct {
-	StartAt time.Time
-	EndAt   time.Time
-	Day     int
+	StartAt time.Time `json:"startAt" bson:"startAt" form:"startAt"`
+	EndAt   time.Time `json:"endAt" bson:"endAt" form:"endAt"`
+	Day     int       `json:"day" bson:"day" form:"day"`
 }
 
 type ManagerDetails struct {
