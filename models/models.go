@@ -15,9 +15,9 @@ type User struct {
 }
 
 type File struct {
-	Name         string `bson:"name" json:"name"`
-	OriginalName string `bson:"originalName" json:"originalName"`
-	Path         string `bson:"path" json:"path"`
+	Name         string `bson:"name" json:"name" form:"name"`
+	OriginalName string `bson:"originalName" json:"originalName" form:"originalName"`
+	Path         string `bson:"path" json:"path" form:"path"`
 }
 
 type SocialProfile struct {
