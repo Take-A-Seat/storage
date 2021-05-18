@@ -39,8 +39,6 @@ type Restaurant struct {
 	Email       string             `bson:"email" json:"email" form:"email"`
 	Website     string             `json:"website" bson:"website" form:"website"`
 	SocialProfile
-	Latitude  float64   `bson:"latitude" json:"latitude"`
-	Longitude float64   `bson:"longitude" json:"longitude"`
 	DeleteAt  time.Time `bson:"deleteAt" json:"delete_at"`
 }
 
