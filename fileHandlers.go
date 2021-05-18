@@ -15,7 +15,10 @@ type File struct {
 
 func HandleFile(file *multipart.FileHeader, filePrefix string, serverPath string, directoryName string) (File, error) {
 	if _, err := os.Stat(directoryName); os.IsNotExist(err) {
-		os.Mkdir(directoryName, 0777)
+		err := os.MkdirAll(directoryName, 0777)
+		if err != nil {
+			return File{}, err
+		}
 	}
 
 	var fileToInsert File
