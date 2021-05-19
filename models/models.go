@@ -51,5 +51,30 @@ type Program struct {
 type ManagerDetails struct {
 	Id         primitive.ObjectID `bson:"_id" json:"id"`
 	Restaurant Restaurant         `bson:"restaurant" json:"restaurant"`
-	User       User          `bson:"user" json:"user"`
+	User       User               `bson:"user" json:"user"`
+}
+
+type Area struct {
+	Id             primitive.ObjectID `bson:"_id" json:"id"`
+	RestaurantId   primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
+	Name           string             `bson:"name" json:"name"`
+	DisplayName    string             `bson:"displayName" json:"displayName"`
+	Priority       int                `bson:"priority" json:"priority"`
+	OnlineCapacity int                `bson:"onlineCapacity" json:"online_capacity"`
+	MinPartySize   int                `bson:"minPartySize" json:"minPartySize"`
+	MaxPartySize   int                `bson:"maxPartySize" json:"maxPartySize"`
+}
+
+type Table struct {
+	Id           primitive.ObjectID `bson:"_id" json:"id"`
+	Number       int                `bson:"number" json:"number"`
+	Priority     int                `bson:"priority" json:"priority"`
+	MinPeople    int                `bson:"minPeople" json:"minPeople"`
+	MaxPeople    int                `bson:"maxPeople" json:"maxPeople"`
+	TableGroupId primitive.ObjectID `bson:"tableGroupId" json:"tableGroupId"`
+}
+
+type GroupTables struct {
+	Id   primitive.ObjectID `bson:"_id" json:"id"`
+	Name string             `bson:"name" json:"name"`
 }
