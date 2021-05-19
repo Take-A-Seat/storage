@@ -27,20 +27,20 @@ type SocialProfile struct {
 }
 
 type Restaurant struct {
-	Id          primitive.ObjectID `bson:"_id" json:"id" form:"id"`
-	Name        string             `bson:"name" json:"name" form:"name"`
-	Description string             `bson:"description" json:"description" form:"description"`
-	Address     string             `bson:"address" json:"address" form:"address"`
-	Phone       string             `bson:"phone" json:"phone" form:"phone"`
-	Program     []Program          `bson:"program" json:"program" form:"program"`
-	PostCode    int                `bson:"postCode"  json:"postCode" form:"postCode"`
-	Logo        File               `bson:"logo" json:"logo" form:"logo"`
-	Country     string             `bson:"country" json:"country" form:"country"`
-	City        string             `bson:"city" json:"city" form:"city"`
-	Email       string             `bson:"email" json:"email" form:"email"`
-	Website     string             `json:"website" bson:"website" form:"website"`
-	SocialProfile
-	DeleteAt time.Time `bson:"deleteAt" json:"delete_at"`
+	Id            primitive.ObjectID `bson:"_id" json:"id" form:"id"`
+	Name          string             `bson:"name" json:"name" form:"name"`
+	Description   string             `bson:"description" json:"description" form:"description"`
+	Address       string             `bson:"address" json:"address" form:"address"`
+	Phone         string             `bson:"phone" json:"phone" form:"phone"`
+	Program       []Program          `bson:"program" json:"program" form:"program"`
+	PostCode      int                `bson:"postCode"  json:"postCode" form:"postCode"`
+	Logo          File               `bson:"logo" json:"logo" form:"logo"`
+	Country       string             `bson:"country" json:"country" form:"country"`
+	City          string             `bson:"city" json:"city" form:"city"`
+	Email         string             `bson:"email" json:"email" form:"email"`
+	Website       string             `json:"website" bson:"website" form:"website"`
+	SocialProfile SocialProfile
+	DeleteAt      time.Time          `bson:"deleteAt" json:"delete_at"`
 }
 
 type Program struct {
