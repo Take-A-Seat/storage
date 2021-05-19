@@ -37,6 +37,7 @@ type Restaurant struct {
 	Facebook    string             `bson:"facebook" json:"facebook" form:"facebook"`
 	Instagram   string             `bson:"instagram" json:"instagram" form:"instagram"`
 	Twitter     string             `bson:"twitter" json:"twitter" form:"twitter"`
+	Province string `bson:"province" json:"province" form:"province"`
 	DeleteAt    time.Time          `bson:"deleteAt" json:"delete_at"`
 }
 
