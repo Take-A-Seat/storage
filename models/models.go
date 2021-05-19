@@ -36,10 +36,11 @@ type Restaurant struct {
 	PostCode    int                `bson:"postCode"  json:"postCode" form:"postCode"`
 	Logo        File               `bson:"logo" json:"logo" form:"logo"`
 	Country     string             `bson:"country" json:"country" form:"country"`
+	City        string             `bson:"city" json:"city" form:"city"`
 	Email       string             `bson:"email" json:"email" form:"email"`
 	Website     string             `json:"website" bson:"website" form:"website"`
 	SocialProfile
-	DeleteAt  time.Time `bson:"deleteAt" json:"delete_at"`
+	DeleteAt time.Time `bson:"deleteAt" json:"delete_at"`
 }
 
 type Program struct {
