@@ -63,6 +63,7 @@ type Area struct {
 	OnlineCapacity int                `bson:"onlineCapacity" json:"online_capacity"`
 	MinPartySize   int                `bson:"minPartySize" json:"minPartySize"`
 	MaxPartySize   int                `bson:"maxPartySize" json:"maxPartySize"`
+	DeleteAt       time.Time          `bson:"deleteAt" json:"deleteAt"`
 }
 
 type Table struct {
@@ -74,10 +75,12 @@ type Table struct {
 	AvailableOnline bool               `bson:"availableOnline" json:"availableOnline"`
 	MinPeople       int                `bson:"minPeople" json:"minPeople"`
 	MaxPeople       int                `bson:"maxPeople" json:"maxPeople"`
+	DeleteAt       time.Time          `bson:"deleteAt" json:"deleteAt"`
 }
 
 type GroupTables struct {
 	Id   primitive.ObjectID `bson:"_id" json:"id"`
 	Name string             `bson:"name" json:"name"`
+	DeleteAt       time.Time          `bson:"deleteAt" json:"deleteAt"`
 }
 
