@@ -66,15 +66,18 @@ type Area struct {
 }
 
 type Table struct {
-	Id           primitive.ObjectID `bson:"_id" json:"id"`
-	Number       int                `bson:"number" json:"number"`
-	Priority     int                `bson:"priority" json:"priority"`
-	MinPeople    int                `bson:"minPeople" json:"minPeople"`
-	MaxPeople    int                `bson:"maxPeople" json:"maxPeople"`
-	TableGroupId primitive.ObjectID `bson:"tableGroupId" json:"tableGroupId"`
+	Id              primitive.ObjectID `bson:"_id" json:"id"`
+	TableGroupId    primitive.ObjectID `bson:"tableGroupId" json:"tableGroupId"`
+	AreaId          primitive.ObjectID `bson:"areaId" json:"areaId"`
+	Number          int                `bson:"number" json:"number"`
+	Priority        int                `bson:"priority" json:"priority"`
+	AvailableOnline bool               `bson:"availableOnline" json:"availableOnline"`
+	MinPeople       int                `bson:"minPeople" json:"minPeople"`
+	MaxPeople       int                `bson:"maxPeople" json:"maxPeople"`
 }
 
 type GroupTables struct {
 	Id   primitive.ObjectID `bson:"_id" json:"id"`
 	Name string             `bson:"name" json:"name"`
 }
+
