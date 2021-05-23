@@ -103,6 +103,6 @@ type Pages struct {
 
 type Menu struct {
 	Id           primitive.ObjectID `bson:"_id" json:"id"`
-	RestaurantId string             `bson:"restaurantId" json:"restaurantId"`
+	RestaurantId primitive.ObjectID             `bson:"restaurantId" json:"restaurantId"`
 	Pages        []Pages            `bson:"pages" json:"pages"`
 }
