@@ -97,8 +97,13 @@ type SectionMenu struct {
 	Products     []ItemMenu         `json:"products" json:"products"`
 }
 
+type Pages struct {
+	Sections []SectionMenu `bson:"sections" json:"sections"`
+	Number   int           `bson:"number" json:"number"`
+}
+
 type Menu struct {
-	Id              primitive.ObjectID `bson:"_id" json:"id"`
-	RestaurantId    string             `bson:"restaurantId" json:"restaurantId"`
-	Sections        []SectionMenu      `bson:"sections" json:"sections"`
+	Id           primitive.ObjectID `bson:"_id" json:"id"`
+	RestaurantId string             `bson:"restaurantId" json:"restaurantId"`
+	Pages        []Pages            `bson:"pages" json:"pages"`
 }
