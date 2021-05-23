@@ -92,7 +92,6 @@ type ItemMenu struct {
 }
 
 type SectionMenu struct {
-	Id           primitive.ObjectID `bson:"_id" json:"id"`
 	TitleSection string             `json:"titleSection" bson:"titleSection"`
 	Products     []ItemMenu         `json:"products" json:"products"`
 }
