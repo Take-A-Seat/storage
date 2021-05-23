@@ -88,7 +88,7 @@ type ItemMenu struct {
 	Id          primitive.ObjectID `bson:"_id" json:"id"`
 	Name        string             `bson:"name" json:"name"`
 	Ingredients string             `bson:"ingredients" json:"ingredients"`
-	Price       string             `bson:"price" json:"price"`
+	Price       float64             `bson:"price" json:"price"`
 }
 
 type SectionMenu struct {
