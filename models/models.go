@@ -75,12 +75,30 @@ type Table struct {
 	AvailableOnline bool               `bson:"availableOnline" json:"availableOnline"`
 	MinPeople       int                `bson:"minPeople" json:"minPeople"`
 	MaxPeople       int                `bson:"maxPeople" json:"maxPeople"`
-	DeleteAt       time.Time          `bson:"deleteAt" json:"deleteAt"`
+	DeleteAt        time.Time          `bson:"deleteAt" json:"deleteAt"`
 }
 
 type GroupTables struct {
-	Id   primitive.ObjectID `bson:"_id" json:"id"`
-	Name string             `bson:"name" json:"name"`
-	DeleteAt       time.Time          `bson:"deleteAt" json:"deleteAt"`
+	Id       primitive.ObjectID `bson:"_id" json:"id"`
+	Name     string             `bson:"name" json:"name"`
+	DeleteAt time.Time          `bson:"deleteAt" json:"deleteAt"`
 }
 
+type ItemMenu struct {
+	Id          primitive.ObjectID `bson:"_id" json:"id"`
+	Name        string             `bson:"name" json:"name"`
+	Ingredients string             `bson:"ingredients" json:"ingredients"`
+	Price       string             `bson:"price" json:"price"`
+}
+
+type SectionMenu struct {
+	Id           primitive.ObjectID `bson:"_id" json:"id"`
+	TitleSection string             `json:"titleSection" bson:"titleSection"`
+	Products     []ItemMenu         `json:"products" json:"products"`
+}
+
+type Menu struct {
+	Id              primitive.ObjectID `bson:"_id" json:"id"`
+	RestaurantId    string             `bson:"restaurantId" json:"restaurantId"`
+	Sections        []SectionMenu      `bson:"sections" json:"sections"`
+}
