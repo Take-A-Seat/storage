@@ -21,8 +21,6 @@ type File struct {
 }
 
 type Coordinates struct {
-	Lng float64 `bson:"lng" json:"lng" form:"lng"`
-	Lat float64 `bson:"lat" json:"lat" form:"lat"`
 }
 
 type Restaurant struct {
@@ -43,7 +41,8 @@ type Restaurant struct {
 	Twitter         string             `bson:"twitter" json:"twitter" form:"twitter"`
 	Province        string             `bson:"province" json:"province" form:"province"`
 	StreetAndNumber string             `bson:"streetAndNumber" json:"streetAndNumber" form:"streetAndNumber"`
-	Mark            Coordinates        `bson:"mark" json:"mark" form:"mark"`
+	Lng             float64            `bson:"lng" json:"lng" form:"lng"`
+	Lat             float64            `bson:"lat" json:"lat" form:"lat"`
 	DeleteAt        time.Time          `bson:"deleteAt" json:"delete_at"`
 }
 
