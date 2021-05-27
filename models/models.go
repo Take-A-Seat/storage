@@ -79,7 +79,7 @@ type Table struct {
 	Number          int                `bson:"number" json:"number"`
 	Priority        int                `bson:"priority" json:"priority"`
 	AvailableOnline bool               `bson:"availableOnline" json:"availableOnline"`
-	FreeNow         bool               `bson:"freeNow" json:"freeNow"`
+	AvailableNow       bool               `bson:"availableNow" json:"availableNow"`
 	MinPeople       int                `bson:"minPeople" json:"minPeople"`
 	MaxPeople       int                `bson:"maxPeople" json:"maxPeople"`
 	DeleteAt        time.Time          `bson:"deleteAt" json:"deleteAt"`
