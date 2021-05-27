@@ -64,8 +64,10 @@ type Area struct {
 	Name           string             `bson:"name" json:"name"`
 	DisplayName    string             `bson:"displayName" json:"displayName"`
 	Priority       int                `bson:"priority" json:"priority"`
-	OnlineCapacity int                `bson:"onlineCapacity" json:"online_capacity"`
+	OnlineCapacity int                `bson:"onlineCapacity" json:"onlineCapacity"`
+	NumberTables   int                `json:"numberTables"`
 	MinPartySize   int                `bson:"minPartySize" json:"minPartySize"`
+	Capacity       string             `json:"capacity"`
 	MaxPartySize   int                `bson:"maxPartySize" json:"maxPartySize"`
 	DeleteAt       time.Time          `bson:"deleteAt" json:"deleteAt"`
 }
