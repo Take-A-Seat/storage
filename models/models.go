@@ -20,9 +20,6 @@ type File struct {
 	Path         string `bson:"path" json:"path" form:"path"`
 }
 
-type Coordinates struct {
-}
-
 type Restaurant struct {
 	Id              primitive.ObjectID `bson:"_id" json:"id" form:"id"`
 	Name            string             `bson:"name" json:"name" form:"name"`
@@ -47,8 +44,8 @@ type Restaurant struct {
 }
 
 type Program struct {
-	StartAt time.Time `json:"startAt" bson:"startAt" form:"startAt" schema:"startAt"`
-	EndAt   time.Time `json:"endAt" bson:"endAt" form:"endAt" schema:"endAt"`
+	StartAt string `json:"startAt" bson:"startAt" form:"startAt" schema:"startAt"`
+	EndAt   string `json:"endAt" bson:"endAt" form:"endAt" schema:"endAt"`
 	Day     int       `json:"day" bson:"day" form:"day" schema:"day"`
 	Close   bool      `bson:"close" json:"close" form:"close" schema:"close"`
 }
