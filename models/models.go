@@ -50,6 +50,7 @@ type Program struct {
 	StartAt time.Time `json:"startAt" bson:"startAt" form:"startAt"`
 	EndAt   time.Time `json:"endAt" bson:"endAt" form:"endAt"`
 	Day     int       `json:"day" bson:"day" form:"day"`
+	Close   bool      `bson:"close" json:"close" form:"close"`
 }
 
 type ManagerDetails struct {
@@ -79,7 +80,7 @@ type Table struct {
 	Number          int                `bson:"number" json:"number"`
 	Priority        int                `bson:"priority" json:"priority"`
 	AvailableOnline bool               `bson:"availableOnline" json:"availableOnline"`
-	AvailableNow       bool               `bson:"availableNow" json:"availableNow"`
+	AvailableNow    bool               `bson:"availableNow" json:"availableNow"`
 	MinPeople       int                `bson:"minPeople" json:"minPeople"`
 	MaxPeople       int                `bson:"maxPeople" json:"maxPeople"`
 	DeleteAt        time.Time          `bson:"deleteAt" json:"deleteAt"`
