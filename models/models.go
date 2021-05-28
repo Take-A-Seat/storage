@@ -29,7 +29,7 @@ type Restaurant struct {
 	Description     string             `bson:"description" json:"description" form:"description"`
 	Address         string             `bson:"address" json:"address" form:"address"`
 	Phone           string             `bson:"phone" json:"phone" form:"phone"`
-	Program         []Program          `bson:"program" json:"program" form:"program"`
+	Program         []Program          `bson:"program" json:"program" form:"program" schema:"program"`
 	PostCode        int                `bson:"postCode"  json:"postCode" form:"postCode"`
 	Logo            File               `bson:"logo" json:"logo" form:"logo"`
 	Country         string             `bson:"country" json:"country" form:"country"`
@@ -47,10 +47,10 @@ type Restaurant struct {
 }
 
 type Program struct {
-	StartAt time.Time `json:"startAt" bson:"startAt" form:"startAt"`
-	EndAt   time.Time `json:"endAt" bson:"endAt" form:"endAt"`
-	Day     int       `json:"day" bson:"day" form:"day"`
-	Close   bool      `bson:"close" json:"close" form:"close"`
+	StartAt time.Time `json:"startAt" bson:"startAt" form:"startAt" schema:"startAt"`
+	EndAt   time.Time `json:"endAt" bson:"endAt" form:"endAt" schema:"endAt"`
+	Day     int       `json:"day" bson:"day" form:"day" schema:"day"`
+	Close   bool      `bson:"close" json:"close" form:"close" schema:"close"`
 }
 
 type ManagerDetails struct {
