@@ -108,6 +108,28 @@ type Pages struct {
 
 type Menu struct {
 	Id           primitive.ObjectID `bson:"_id" json:"id"`
-	RestaurantId primitive.ObjectID             `bson:"restaurantId" json:"restaurantId"`
+	RestaurantId primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
 	Pages        []Pages            `bson:"pages" json:"pages"`
+}
+
+type SpecificRestaurant struct {
+	Id   primitive.ObjectID `bson:"_id" json:"id"`
+	Name string             `bson:"name" json:"name"`
+}
+
+type SpecificRestaurantRelation struct {
+	Id                   primitive.ObjectID `bson:"_id" json:"id"`
+	RestaurantId         primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
+	SpecificRestaurantId primitive.ObjectID `bson:"specificRestaurantId" json:"specificRestaurantId"`
+}
+
+type TypeRestaurant struct {
+	Id   primitive.ObjectID `bson:"_id" json:"id"`
+	Name string             `bson:"name" json:"name"`
+}
+
+type TypeRestaurantRelation struct {
+	Id               primitive.ObjectID `bson:"_id" json:"id"`
+	RestaurantId     primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
+	TypeRestaurantId primitive.ObjectID `bson:"typeRestaurantId" json:"typeRestaurantId"`
 }
