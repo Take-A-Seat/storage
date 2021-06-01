@@ -40,7 +40,8 @@ type Restaurant struct {
 	StreetAndNumber string             `bson:"streetAndNumber" json:"streetAndNumber" form:"streetAndNumber"`
 	Lng             float64            `bson:"lng" json:"lng" form:"lng"`
 	Lat             float64            `bson:"lat" json:"lat" form:"lat"`
-	DeleteAt        time.Time          `bson:"deleteAt" json:"delete_at"`
+	VisibleOnline   bool               `bson:"visibleOnline" json:"visibleOnline" form:"visibleOnline"`
+	DeleteAt        time.Time          `bson:"deleteAt" json:"deleteAt"`
 }
 
 type Program struct {
