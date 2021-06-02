@@ -24,7 +24,6 @@ type Restaurant struct {
 	Id              primitive.ObjectID `bson:"_id" json:"id" form:"id"`
 	Name            string             `bson:"name" json:"name" form:"name"`
 	Description     string             `bson:"description" json:"description" form:"description"`
-	Address         string             `bson:"address" json:"address" form:"address"`
 	Phone           string             `bson:"phone" json:"phone" form:"phone"`
 	Program         []Program          `bson:"program" json:"program" form:"program" schema:"program"`
 	PostCode        int                `bson:"postCode"  json:"postCode" form:"postCode"`
