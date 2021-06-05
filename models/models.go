@@ -133,3 +133,27 @@ type TypeRestaurantRelation struct {
 	RestaurantId     primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
 	TypeRestaurantId primitive.ObjectID `bson:"typeRestaurantId" json:"typeRestaurantId"`
 }
+
+type AvailableDataReservation struct {
+	TimeString string    `json:"timeString"`
+	DateTime   time.Time `json:"dateTime"`
+}
+
+type Reservation struct {
+	Id              primitive.ObjectID `bson:"_id" json:"id"`
+	Persons         int                `bson:"persons" json:"persons" `
+	ReservationDate time.Time          `bson:"reservationDate" json:"reservationDate"`
+	RestaurantId    primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
+	Phone           string             `bson:"phone" json:"phone"`
+	FirstName       string             `bson:"firstName" json:"firstName"`
+	LastName        string             `bson:"lastName" json:"lastName"`
+	Email           string             `bson:"email" json:"email"`
+	Details         string             `bson:"details" json:"details" `
+}
+
+type ReservationCode struct {
+	Id            primitive.ObjectID `bson:"_id" json:"id"`
+	RestaurantId  primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
+	ReservationId primitive.ObjectID `bson:"reservationId" json:"reservationId"`
+	Code          string             `bson:"code" json:"code"`
+}
