@@ -24,7 +24,7 @@ type ToInfo struct {
 }
 
 func SendEmail(subject string, toInfo ToInfo, textContent string, htmlContent string) {
-	from := mail.NewEmail("Take a seat", "info@takeaseat.com")
+	from := mail.NewEmail("Take a seat", "calinciuc.andrei@yahoo.com")
 	to := mail.NewEmail(toInfo.Name, toInfo.Email)
 	message := mail.NewSingleEmail(from, subject, to, textContent, htmlContent)
 	client := sendgrid.NewSendClient("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")
