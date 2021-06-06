@@ -148,7 +148,8 @@ type Reservation struct {
 	FirstName       string             `bson:"firstName" json:"firstName"`
 	LastName        string             `bson:"lastName" json:"lastName"`
 	Email           string             `bson:"email" json:"email"`
-	Details         string             `bson:"details" json:"details" `
+	Details         string             `bson:"details" json:"details"`
+	Status          string             `bson:"status" json:"status"`
 }
 
 type ReservationCode struct {
