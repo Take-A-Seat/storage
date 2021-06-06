@@ -27,7 +27,7 @@ func SendEmail(subject string, toInfo ToInfo, textContent string, htmlContent st
 	from := mail.NewEmail("Take a seat", "calinciuc.andrei@yahoo.com")
 	to := mail.NewEmail(toInfo.Name, toInfo.Email)
 	message := mail.NewSingleEmail(from, subject, to, textContent, htmlContent)
-	client := sendgrid.NewSendClient("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")
+	client := sendgrid.NewSendClient("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")
 
 	response, err := client.Send(message)
 
