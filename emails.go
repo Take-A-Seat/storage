@@ -24,10 +24,10 @@ type ToInfo struct {
 }
 
 func SendEmail(subject string, toInfo ToInfo, textContent string, htmlContent string) {
-	from := mail.NewEmail("Take a seat", "calinciuc.andrei@yahoo.com")
+	from := mail.NewEmail("Take a seat", "info@takeaseat.site")
 	to := mail.NewEmail(toInfo.Name, toInfo.Email)
 	message := mail.NewSingleEmail(from, subject, to, textContent, htmlContent)
-	client := sendgrid.NewSendClient("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")
+	client := sendgrid.NewSendClient("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")
 
 	response, err := client.Send(message)
 
