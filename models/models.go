@@ -156,6 +156,8 @@ type ReservationCode struct {
 	Id            primitive.ObjectID `bson:"_id" json:"id"`
 	RestaurantId  primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
 	ReservationId primitive.ObjectID `bson:"reservationId" json:"reservationId"`
+	TableId       primitive.ObjectID `bson:"tableId" json:"tableId"`
+	Message       string             `bson:"message" json:"message"`
 	Code          string             `bson:"code" json:"code"`
 }
 
