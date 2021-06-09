@@ -151,16 +151,11 @@ type Reservation struct {
 	Email                string             `bson:"email" json:"email"`
 	Details              string             `bson:"details" json:"details"`
 	Status               string             `bson:"status" json:"status"`
+	TableId              primitive.ObjectID `bson:"tableId" json:"tableId"`
+	MessageToClient      string             `bson:"messageToClient" json:"messageToClient"`
+	Code                 string             `bson:"code" json:"code"`
 }
 
-type ReservationCode struct {
-	Id            primitive.ObjectID `bson:"_id" json:"id"`
-	RestaurantId  primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
-	ReservationId primitive.ObjectID `bson:"reservationId" json:"reservationId"`
-	TableId       primitive.ObjectID `bson:"tableId" json:"tableId"`
-	Message       string             `bson:"message" json:"message"`
-	Code          string             `bson:"code" json:"code"`
-}
 
 type RestaurantWithDetails struct {
 	RestaurantDetails Restaurant                   `json:"restaurantDetails"`
