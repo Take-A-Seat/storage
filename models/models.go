@@ -140,16 +140,17 @@ type AvailableDataReservation struct {
 }
 
 type Reservation struct {
-	Id              primitive.ObjectID `bson:"_id" json:"id"`
-	Persons         int                `bson:"persons" json:"persons" `
-	ReservationDate time.Time          `bson:"reservationDate" json:"reservationDate"`
-	RestaurantId    primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
-	Phone           string             `bson:"phone" json:"phone"`
-	FirstName       string             `bson:"firstName" json:"firstName"`
-	LastName        string             `bson:"lastName" json:"lastName"`
-	Email           string             `bson:"email" json:"email"`
-	Details         string             `bson:"details" json:"details"`
-	Status          string             `bson:"status" json:"status"`
+	Id                   primitive.ObjectID `bson:"_id" json:"id"`
+	Persons              int                `bson:"persons" json:"persons" `
+	StartReservationDate time.Time          `bson:"startReservationDate" json:"startReservationDate"`
+	EndReservationDate   time.Time          `bson:"endReservationDate" json:"endReservationDate"`
+	RestaurantId         primitive.ObjectID `bson:"restaurantId" json:"restaurantId"`
+	Phone                string             `bson:"phone" json:"phone"`
+	FirstName            string             `bson:"firstName" json:"firstName"`
+	LastName             string             `bson:"lastName" json:"lastName"`
+	Email                string             `bson:"email" json:"email"`
+	Details              string             `bson:"details" json:"details"`
+	Status               string             `bson:"status" json:"status"`
 }
 
 type ReservationCode struct {
