@@ -67,6 +67,7 @@ type Area struct {
 	MinPartySize   int                `bson:"minPartySize" json:"minPartySize"`
 	Capacity       string             `json:"capacity"`
 	MaxPartySize   int                `bson:"maxPartySize" json:"maxPartySize"`
+	Tables         []Table            `json:"tables"`
 	DeleteAt       time.Time          `bson:"deleteAt" json:"deleteAt"`
 }
 
