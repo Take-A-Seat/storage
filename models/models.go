@@ -151,7 +151,7 @@ type Reservation struct {
 	Email                string             `bson:"email" json:"email"`
 	Details              string             `bson:"details" json:"details"`
 	Status               string             `bson:"status" json:"status"`
-	TableId              primitive.ObjectID `bson:"tableId" json:"tableId"`
+	TableId             []primitive.ObjectID `bson:"tableId" json:"tableId"`
 	MessageToClient      string             `bson:"messageToClient" json:"messageToClient"`
 	Code                 string             `bson:"code" json:"code"`
 }
