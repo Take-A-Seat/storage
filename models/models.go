@@ -142,7 +142,7 @@ type AvailableDataReservation struct {
 
 type ProductReservation struct {
 	ItemMenu
-	Delivered bool `bson:"delivered" json:"delivered"`
+	Status string `bson:"status" json:"status"`
 }
 
 type Reservation struct {
@@ -159,7 +159,8 @@ type Reservation struct {
 	Status               string               `bson:"status" json:"status"`
 	TableId              []primitive.ObjectID `bson:"tableId" json:"tableId"`
 	MessageToClient      string               `bson:"messageToClient" json:"messageToClient"`
-	Products             []ProductReservation           `bson:"products" json:"products"`
+	Products             []ProductReservation `bson:"products" json:"products"`
+	TotalToPay           float64              `bson:"totalToPay" json:"totalToPay"`
 	NeedAssistance       bool                 `bson:"needAssistance" json:"needAssistance"`
 	Code                 string               `bson:"code" json:"code"`
 }
