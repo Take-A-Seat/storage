@@ -1,4 +1,4 @@
-module ws
+module github.com/Take-A-Seat/storage/ws
 
 go 1.14
 
