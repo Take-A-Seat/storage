@@ -150,24 +150,43 @@ type Reservation struct {
 	Persons              int                  `bson:"persons" json:"persons" `
 	StartReservationDate time.Time            `bson:"startReservationDate" json:"startReservationDate"`
 	EndReservationDate   time.Time            `bson:"endReservationDate" json:"endReservationDate"`
-	RestaurantId         primitive.ObjectID   `bson:"restaurantId" json:"restaurantId"`
-	Phone                string               `bson:"phone" json:"phone"`
-	FirstName            string               `bson:"firstName" json:"firstName"`
-	LastName             string               `bson:"lastName" json:"lastName"`
-	Email                string               `bson:"email" json:"email"`
-	Details              string               `bson:"details" json:"details"`
-	Status               string               `bson:"status" json:"status"`
-	TableId              []primitive.ObjectID `bson:"tableId" json:"tableId"`
-	MessageToClient      string               `bson:"messageToClient" json:"messageToClient"`
-	Products             []ProductReservation `bson:"products" json:"products"`
-	TotalToPay           float64              `bson:"totalToPay" json:"totalToPay"`
-	NeedAssistance       bool                 `bson:"needAssistance" json:"needAssistance"`
-	Code                 string               `bson:"code" json:"code"`
+	RestaurantId    primitive.ObjectID   `bson:"restaurantId" json:"restaurantId"`
+	Phone           string               `bson:"phone" json:"phone"`
+	FirstName       string               `bson:"firstName" json:"firstName"`
+	LastName        string               `bson:"lastName" json:"lastName"`
+	Email           string               `bson:"email" json:"email"`
+	Details         string               `bson:"details" json:"details"`
+	Status          string               `bson:"status" json:"status"`
+	TableId         []primitive.ObjectID `bson:"tableId" json:"tableId"`
+	MessageToClient string               `bson:"messageToClient" json:"messageToClient"`
+	Products        []ProductReservation `bson:"products" json:"products"`
+	TotalToPay      float64              `bson:"totalToPay" json:"totalToPay"`
+	NeedAssistance  bool                 `bson:"needAssistance" json:"needAssistance"`
+	Code            string               `bson:"code" json:"code"`
 }
-
 
 type RestaurantWithDetails struct {
 	RestaurantDetails Restaurant                   `json:"restaurantDetails"`
 	ListSpecifics     []SpecificRestaurantRelation `json:"listSpecifics"`
 	ListTypes         []TypeRestaurantRelation     `json:"listTypes"`
+}
+
+type ChartData struct {
+	Min  float64 `json:"min"`
+	Max  float64 `json:"max"`
+	Avg  float64 `json:"avg"`
+	Name string  `json:"name"`
+}
+
+type ChartStatusReservation struct {
+	Name string `json:"name"`
+}
+
+type StatisticReservations struct {
+	Persons              []ChartData `json:"persons"`
+	TotalPay             []ChartData `json:"totalPay"`
+	NumberReservations   []ChartData `json:"numberReservations"`
+	NumberPeopleReturned []ChartData `json:"numberPeopleReturned"`
+	Declined             []ChartData `json:"declined"`
+	Finished             []ChartData `json:"finished"`
 }
