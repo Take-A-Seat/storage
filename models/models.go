@@ -178,11 +178,16 @@ type ChartData struct {
 	Name string  `json:"name"`
 }
 
+type CharWithValue struct {
+	Name string `json:"name"`
+	Value float64 `json:"value"`
+}
+
 type StatisticReservations struct {
 	Persons              []ChartData `json:"persons"`
 	TotalPay             []ChartData `json:"totalPay"`
-	NumberReservations   []ChartData `json:"numberReservations"`
-	NumberPeopleReturned []ChartData `json:"numberPeopleReturned"`
-	Declined             []ChartData `json:"declined"`
-	Finished             []ChartData `json:"finished"`
+	NumberReservations   []CharWithValue `json:"numberReservations"`
+	NumberPeopleReturned []CharWithValue `json:"numberPeopleReturned"`
+	Declined             []CharWithValue `json:"declined"`
+	Finished             []CharWithValue `json:"finished"`
 }
