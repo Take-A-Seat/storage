@@ -178,10 +178,6 @@ type ChartData struct {
 	Name string  `json:"name"`
 }
 
-type ChartStatusReservation struct {
-	Name string `json:"name"`
-}
-
 type StatisticReservations struct {
 	Persons              []ChartData `json:"persons"`
 	TotalPay             []ChartData `json:"totalPay"`
