@@ -184,8 +184,9 @@ type CharWithValue struct {
 }
 
 type StatisticReservations struct {
-	Persons              []ChartData `json:"persons"`
-	TotalPay             []ChartData `json:"totalPay"`
+	Persons              []ChartData     `json:"persons"`
+	TotalPay             []ChartData     `json:"totalPay"`
+	TotalMoneyReceived   []CharWithValue     `json:"totalMoneyReceived"`
 	NumberReservations   []CharWithValue `json:"numberReservations"`
 	NumberPeopleReturned []CharWithValue `json:"numberPeopleReturned"`
 	Declined             []CharWithValue `json:"declined"`
